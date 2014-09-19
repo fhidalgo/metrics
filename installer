@@ -4,9 +4,10 @@
 # Licensed under the MIT license, which can be found at http://www.opensource.org/licenses/mit-license.php.
 #
 
-git clone https://github.com/ShogunPanda/metrics.git
+git clone https://github.com/fhidalgo/metrics.git
 ln -s metrics/metric_fu.rb .metrics
-echo "metrics/" >> .gitignore
-echo ".metrics" >> .gitignore
-echo "tmp/metric_fu" >> .gitignore
-
+cd metrics
+sudo cp cvim /usr/local/bin/cvim
+sudo chmod a+x /usr/local/bin/cvim
+sudo cp cvim.desktop /usr/share/applications/cvim.desktop
+sudo update-desktop-database

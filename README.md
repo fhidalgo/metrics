@@ -1,6 +1,6 @@
 # metrics
 
-Fine-tuned metric_fu configuration.
+Fine-tuned metric_fu configuration, with vim protocol handler.
 
 ## Description
 
@@ -9,6 +9,10 @@ Running [metric_fu](https://github.com/metric_fu/metric_fu) can be a little slow
 So, I found how to run the same suite only on specific subdirectory and only on the files we're interested on.
 
 Also, I disabled some metrics I usually run separately (like Simplecov) or which I'm not interested in.
+
+Url in reports will open the file using vim, just to edit it fast.
+
+TODO: Support to open the file in the line referer in the report.
 
 ## Installing in your project
 
@@ -43,10 +47,15 @@ Within your project directory, execute the following steps.
     echo ".metrics" >> .gitignore
     echo "tmp/metric_fu" >> .gitignore
     ```
+1. Configuring vim protocol handler
+    sudo cp cvim /usr/local/bin/cvim
+    sudo chmod a+x /usr/local/bin/cvim
+    sudo cp cvim.desktop usr/share/applications/cvim.desktop
+    sudo update-desktop-database
 
 To execute the last three steps, you can also use the installer:
 
-`curl -s -L https://raw.github.com/ShogunPanda/metrics/master/installer | sh`
+`curl -s -L https://raw.githubusercontent.com/fhidalgo/metrics/master/installer | sh`
 
 ## Running metrics automatically
 
